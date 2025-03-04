@@ -1,0 +1,11 @@
+function hasDoubleProperty(doubleObject, propCheck1, propCheck2){
+  let propName = '';
+  if(propCheck1 in doubleObject){
+    if(propCheck2 in doubleObject[propCheck1]){
+      return doubleObject[propCheck1][propCheck2];
+    } else propName = propCheck2;
+  } else propName = propCheck1;
+  
+
+  return `No such property: ${propName}`;
+}
