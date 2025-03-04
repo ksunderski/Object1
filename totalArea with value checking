@@ -1,0 +1,18 @@
+function totalArea(room1, room2, room3) {
+  function isValidInput(n){
+    return typeof n === 'number' && n > 0;
+  }
+  
+  if (
+  !isValidInput(room1.width) || 
+  !isValidInput(room2.width) || 
+  !isValidInput(room3.width) || 
+  !isValidInput(room1.length) || 
+  !isValidInput(room2.length) ||
+  !isValidInput(room1.length)) return 'Invalid input';
+  
+  let room1Area = room1.width * room1.length;
+  let room2Area = room2.width * room2.length;
+  let room3Area = room3.width * room3.length;
+  return `Room 1: ${room1Area}, Room 2: ${room2Area}, Room 3: ${room3Area}, Total: ${room1Area + room2Area + room3Area}`;
+}
