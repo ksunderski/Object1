@@ -1,0 +1,33 @@
+function calculateTotal(product1, product2, product3, discount){
+
+ 
+   product1.discount = validateDiscount(product1.discount);
+   product2.discount = validateDiscount(product2.discount);
+   product3.discount = validateDiscount(product3.discount);
+   discount = validateDiscount(discount);
+  
+  
+  const subtotal1 = subtotal(product1.price, product1.quantity, product1.discount);
+  const subtotal2 = subtotal(product2.price, product2.quantity, product2.discount);
+  const subtotal3 = subtotal(product3.price, product3.quantity, product3.discount);
+
+  
+  const total = subtotal1 + subtotal2 + subtotal3;
+  const totalWithDiscount = total - total * discount/100;
+  
+   
+  return "Total price is: $" + totalWithDiscount;
+  
+}
+
+function subtotal(price, quantity, discount){
+  return price * quantity - price * quantity * discount / 100;
+}
+
+function validateDiscount(value) {
+  if (value < 0) return 0;       
+  if (value > 100) return 90;    
+  return value;                  
+}
+
+console.log(calculateTotal({ name: "product1", price: 100, quantity: 2, discount: 110 }, { name: "product2", price: 200, quantity: 1, discount: -10 }, { name: "product3", price: 300, quantity: 4, discount: 10 }, 150) )
