@@ -15,3 +15,7 @@ function sumOfTwoObjects(obj1, obj2){
 
 return  count;
 }
+console.log(sumOfTwoObjects({ a: null, b: 8 }, { a: 3, b: undefined }))
+console.log(sumOfTwoObjects({ a: 1, b: 2 }, { a: 3, b: 4 }));
+console.log(sumOfTwoObjects({ b: 2 }, { a: 3 }));
+console.log(sumOfTwoObjects({}, { b: 999 }));
