@@ -1,0 +1,20 @@
+function bestStudent(student1, student2, scoreOfStudent1, scoreOfStudent2){
+  let sumOfscoresOfStudent1 = countScores(scoreOfStudent1);
+  let sumOfscoresOfStudent2 = countScores(scoreOfStudent2);
+  
+  return (sumOfscoresOfStudent1 > sumOfscoresOfStudent2) ? 
+      `Student ${student1.firstName} ${student1.lastName} has the score of ${sumOfscoresOfStudent1}` :     
+       (sumOfscoresOfStudent1 < sumOfscoresOfStudent2) ? 
+       `Student ${student2.firstName} ${student2.lastName} has the score of ${sumOfscoresOfStudent2}` :
+       `Both students have the same score of ${sumOfscoresOfStudent2}`;
+
+}
+
+function countScores(obj) {
+  return obj.score1 + obj.score2;
+}
+
+console.log(bestStudent({ firstName: "John", lastName: "Smith"}, { firstName: "Mike", lastName: "Williams" }, {score1: 89, score2: 44 }, { score1: 75, score2: 77 }} ); //return Student Mike Williams has the score of 152
+console.log(bestStudent({ firstName: "Jessy", lastName: "Jones"}, { firstName: "Bob", lastName: "Brown" }, {score1: 34, score2: 66 }, { score1: 56, score2: 71 }} );    //return Student Mike Williams has the score of 152
+console.log();
+console.log(bestStudent({ firstName: "Robert", lastName: "Davis"}, { firstName: "Thomas", lastName: "Garcia" }, {score1: 40, score2: 80 }, { score1: 60, score2: 60 }});//return Both students have the same score of 120
