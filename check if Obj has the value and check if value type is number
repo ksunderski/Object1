@@ -1,0 +1,17 @@
+function sumOfTwoObjects(obj1, obj2){
+  function isValidNumber(obj, key){
+    return (obj && key in obj && typeof obj[key] === 'number');
+  }
+
+  let count = 0;
+  if (isValidNumber(obj1, 'a')) 
+  count += obj1.a;
+  if (isValidNumber(obj1, 'b'))
+  count += obj1.b;
+  if (isValidNumber(obj2, 'a')) 
+  count += obj2.a;
+  if (isValidNumber(obj2, 'b'))
+  count += obj2.b;
+
+return  count;
+}
