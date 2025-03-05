@@ -1,0 +1,15 @@
+function keyInObject(obj, key1, key2, key3 ){
+  let keyObj = {}
+  keyObj.key1 = isKey(obj, key1); 
+  keyObj.key2 = isKey(obj, key2);
+  keyObj.key3 = isKey(obj, key3);
+  return keyObj;
+}
+
+function isKey(obj, key){
+  return (key in obj);
+}
+
+console.log(keyInObject({ make: "Ford", year: 2020, color: "blue" }, "make", "model", "year")); // returns { key1: true, key2: false, key3: true }
+console.log(keyInObject({}, "a", "b", "c"));                                                    // returns { key1: false, key2: false, key3: false }
+console.log(keyInObject({ num1: 5, num2: 10, car: false }, "num1", "num2", "num3"));            // returns { key1: true, key2: true, key3: false }
