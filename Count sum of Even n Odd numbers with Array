@@ -1,0 +1,24 @@
+function numberSum(count, n1, n2, n3, n4) {
+  delete count.fractional;
+
+  // ✅ Store numbers in an array
+  const numbers = [n1, n2, n3, n4];
+
+  // ✅ Iterate through numbers
+  for (const num of numbers) {
+    if (num > 0) { // Only consider positive numbers
+      if (num % 2 === 0) {
+        count.evenPositive += num;
+      } else {
+        count.oddPositive += num;
+      }
+    }
+  }
+  
+  return count;
+}
+
+// 🔹 Example Usage
+const countObj = { evenPositive: 0, oddPositive: 0 };
+console.log(numberSum(countObj, 1, 2, 3, 4));  
+// ✅ { evenPositive: 6, oddPositive: 4 }
