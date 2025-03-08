@@ -1,0 +1,18 @@
+function numberSpec(obj, key1, key2, operator){
+  let result = 0;
+  if (obj.hasOwnProperty(key1) && obj.hasOwnProperty(key2)){
+    if(operator === '+'){
+      result = obj[key1] + obj[key2];
+    } else if (operator === '-') {
+      result = obj[key1] - obj[key2];
+    } else if (operator === '*'){
+      result = obj[key1] * obj[key2];
+    } else if (operator === '/'){
+      result = obj[key1] / obj[key2];
+    } else {
+      return `There is no such properties in object`;
+    }
+  return `${obj[key1]} ${operator} ${obj[key2]} = ${result}`;
+  }
+  return `There is no such properties in object`;
+}
