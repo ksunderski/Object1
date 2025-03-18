@@ -1,0 +1,28 @@
+function booksToRead(books){
+  let booksToRead = [];                                                   // create an array with object that only has unread books
+  for (let i = 0; i < books.length; i++) {
+    if (books[i].alreadyRead === false) {
+      booksToRead.push(books[i]);
+    }
+  }
+  if (booksToRead.length === 0) {                                         //if it's empty so all books has been read
+    return `Congrats! You've read all books.`;
+  }
+  let result = 'You still need to read: ';                                //start a string 
+  if(booksToRead.length !== 0) {
+    
+    for (let i = 0; i < booksToRead.length; i++) {                        //iterate through unread books and extract title and author
+      result += `"${booksToRead[i].title}" by ${booksToRead[i].author}`;
+      if (i === booksToRead.length - 1) {                                  // if it's the last book, add a period in the end
+        result += `.`;                                                      
+      } else {
+        result += `, `;                                                    //add a semicolon between books
+        }
+    }
+   } 
+    return result;
+ }
+
+console.log(booksToRead([{title: 'The Design of EveryDay Things', author: 'Don Norman', alreadyRead: false, pages: 310}, // `You still need to read 'The Design of EveryDay Things' by Don Norman.`)
+                         {title: 'The Most Human Human', author: 'Brian Christian', alreadyRead: true, pages: 584}, 
+                        {title: 'The Pragmatic Programmer', author: 'Andrew Hunt', alreadyRead: true, pages: 352}]); 
